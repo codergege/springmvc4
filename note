@@ -1,0 +1,42 @@
+1. 建立 springmvc 工程
+1.1 maven project -> webapp
+1.2 copy pom.xml
+1.3 补全工程结构, src/main/java
+1.4 maven update
+
+2. springmvc 的 helloworld
+2.1 web.xml 中添加 springmvc servlet
+url 改成 /
+2.2 WEB-INF/servletname-servlet.xml
+component-scan
+InternalResourceViewResolver
+2.3
+ui 页与结果页
+<a href="springmvc/hello">Hello, springmvc!</a>
+handler
+@Controller
+@RequestMapping("/springmvc")
+public class Handler {
+	
+	@RequestMapping("/hello")
+	public String handle1(){
+		System.out.println("handle1");
+		return "success";
+	}
+}
+
+3. @RequestMapping
+eg: handle2-
+value, method, params
+value: 请求的url. @RequestMapping 可以在两个地方出现，一个是 handler, 一个是 handle.
+两个地方合起来就是完整的请求 url
+method: 表示只能处理指定的 method. method=RequestMethod.POST
+params: 
+- params = "params1" 必须包含 param1 参数
+- params = "!params1" 必须不包含 param1 参数
+- params = "params1 != value1" 必须包含 params1 参数, 且 param1 的值不能是 value1; 注意，这个测试下来
+没有 params1 也是对的
+- params = {"params1 = value1", "params2"} 必须包含 params1, params2, 且 params1 
+的值必须是 value1.
+
+	
