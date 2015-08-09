@@ -25,6 +25,13 @@ th,td{ padding:0; }
 </head>
 <body>
 
+
+<a href="springmvc2/handle1/赵波">test @Variable</a>
+<p class="desc">right</p>
+<br>
+
+<hr>
+
 <a href="springmvc/handle5?userId=3">test @RequestMapping 5</a>
 <p class="desc">wrong</p>
 <br>
@@ -43,7 +50,7 @@ th,td{ padding:0; }
 <a href="springmvc/handle4">test @RequestMapping 4</a>
 <p class="desc">correct</p>
 <br>
-<a href="springmvc/handle3?userId=1">test @RequestMapping 3</a>
+<a href="springmvc/handle3?userId=赵波">test @RequestMapping 3</a>
 <p class="desc">correct</p>
 <br>
 <a href="springmvc/handle3?userId">test @RequestMapping 3</a>

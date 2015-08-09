@@ -1,3 +1,7 @@
+需要解决的问题:
+1. 乱码问题
+	@RequestParam @PathVariable 的中文参数传入后台会乱码
+
 1. 建立 springmvc 工程
 1.1 maven project -> webapp
 1.2 copy pom.xml
@@ -25,7 +29,7 @@ public class Handler {
 	}
 }
 
-3. @RequestMapping
+3. @RequestMapping @RequestParam
 eg: handle2-
 value, method, params
 value: 请求的url. @RequestMapping 可以在两个地方出现，一个是 handler, 一个是 handle.
@@ -38,5 +42,21 @@ params:
 没有 params1 也是对的
 - params = {"params1 = value1", "params2"} 必须包含 params1, params2, 且 params1 
 的值必须是 value1.
+
+获取参数
+	@RequestMapping(value = "/handle3", params="userId")
+	public String handle3(@RequestParam("userId") String name){
+		System.out.println("handle3 userId = " + name);
+		return "success";
+	}
+	参数中文传入后台会有乱码
+
+4. @PathVariable 
+	@RequestMapping("/handle1/{name}")
+	public String handle1(@PathVariable("name") String xxx) {
+		System.out.println("handle1 + name = " + xxx);
+		return "success";
+	}
+参数中文传入后台会乱码...
 
 	
