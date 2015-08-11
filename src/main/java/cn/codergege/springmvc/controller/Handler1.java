@@ -1,4 +1,4 @@
-package cn.codergege.springmvc;
+package cn.codergege.springmvc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/springmvc")
-public class Handler {
+public class Handler1 {
 	
 	/**
 	 * hello world demo
@@ -18,7 +18,6 @@ public class Handler {
 		System.out.println("handle1");
 		return "success";
 	}
-	
 	/**
 	 * RequestMapping method demo
 	 * @return

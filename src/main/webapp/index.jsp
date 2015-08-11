@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -19,13 +20,71 @@ th,td{ padding:0; }
 
 .ui{ margin-top: 20px; border: 1px solid #ccc; text-align: center; }
 .desc{border: 1px solid #333; color: red;}
+
+.fl{ display: inline-block; width: 40px; text-align: right; background: #ccc;}
 </style>
 <script>
 </script>
 </head>
 <body>
 
+<a href="springmvc4/testModelAndView">test ModelAndView</a>
+<p class="desc">test modelandview</p>
+<br>
 
+<hr>
+
+<form action="springmvc3/testPojo" method="POST">
+	<input type="hidden" name="id" value="1"/>
+	<label class="fl">用户名:</label><input type="text" name="username"/><br>
+	<label class="fl">昵称:</label><input type="text" name="nickname"/><br>
+	<label class="fl">密码:</label><input type="password" name="password"/><br>
+	<label class="fl">生日:</label><input type="text" name="birthday"/><br>
+	<label class="fl">省:</label><input type="text" name="address.province"/><br>
+	<label class="fl">市:</label><input type="text" name="address.city"/><br>
+	<input type="submit" value="Submit post"/><br>
+</form>
+<p class="desc">test pojo post</p>
+<br>
+<form action="springmvc3/testPojo" method="GET">
+	<input type="hidden" name="id"/>
+	<label class="fl">用户名:</label><input type="text" name="username"/><br>
+	<label class="fl">昵称:</label><input type="text" name="nickname"/><br>
+	<label class="fl">密码:</label><input type="password" name="password"/><br>
+	<label class="fl">生日:</label><input type="text" name="birthday"/><br>
+	<label class="fl">省:</label><input type="text" name="address.province"/><br>
+	<label class="fl">市:</label><input type="text" name="address.city"/><br>
+	<input type="submit" value="Submit get"/><br>
+</form>
+
+<p class="desc">test pojo get</p>
+<br>
+
+<hr>
+
+<a href="springmvc2/testCookieValue">test @CookieValue</a>
+<p class="desc">test @CookieValue</p>
+<br>
+<form action="springmvc2/testRest" method="POST">
+	<input type="submit" value="test rest post"/>
+</form>
+<p class="desc">rest post</p>
+<br>
+<form action="springmvc2/testRest/2" method="POST">
+	<input type="hidden" name="_method" value="PUT"/>
+	<input type="submit" value="test rest put"/>
+</form>
+<p class="desc">rest put</p>
+<br>
+<form action="springmvc2/testRest/1" method="POST">
+	<input type="hidden" name="_method" value="DELETE"/>
+	<input type="submit" value="test rest delete"/>
+</form>
+<p class="desc">rest delete</p>
+<br>
+<a href="springmvc2/testRest/2">test rest get</a>
+<p class="desc">rest get</p>
+<br>
 <a href="springmvc2/handle1/赵波">test @Variable</a>
 <p class="desc">right</p>
 <br>

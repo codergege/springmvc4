@@ -1,7 +1,7 @@
 需要解决的问题:
 1. 乱码问题
 	@RequestParam @PathVariable 的中文参数传入后台会乱码
-
+-----------------------------------
 1. 建立 springmvc 工程
 1.1 maven project -> webapp
 1.2 copy pom.xml
@@ -60,3 +60,67 @@ params:
 参数中文传入后台会乱码...
 
 	
+5. REST 
+HiddenHpptMethodFilter 将 post 转换为 post put delete
+post 新增
+put 更新
+delete 删除
+5.1 web.xml 中添加:
+	<filter>
+		<filter-name>HiddenHttpMethodFilter</filter-name>
+		<filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>HiddenHttpMethodFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+5.2 
+	<form action="springmvc/testRest/1" method="post">
+		<input type="hidden" name="_method" value="PUT"/>
+		<input type="submit" value="TestRest PUT"/>
+	</form>
+	<br><br>
+	
+	<form action="springmvc/testRest/1" method="post">
+		<input type="hidden" name="_method" value="DELETE"/>
+		<input type="submit" value="TestRest DELETE"/>
+	</form>
+	<br><br>
+	
+	<form action="springmvc/testRest" method="post">
+		<input type="submit" value="TestRest POST"/>
+	</form>
+	<br><br>
+	
+	<a href="springmvc/testRest/1">Test Rest Get</a>
+	<br><br>
+
+6. @RequestParam 
+value default ""
+required default true
+defaultValue default ValueConstants.DEFAULT_NONE 这是个非空的值
+
+7. @CookieValue 与 @RequestParam 差不多, 可以让方法入参绑定某个 cookie 值
+
+8. 入参绑定 pojo
+form method get post 有什么区别？ 好像中文乱码会有区别
+如果出现 400 错误, 应该是 form 表单中的 name 与 pojo 类的字段不一致， 或者 pojo 中有 Date 类型，没有转换
+
+9. Servlet API 作为入参 
+
+10. 处理模型数据
+页面不支持 el 表达式: <%@ page isELIgnored="false" %>
+10.1 ModelAndView
+
+	@RequestMapping("/testModelAndView")
+	public ModelAndView handle1() {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("time", new Date());
+		mv.setViewName("success");
+		return mv;
+	}
+
+模型数据放在了请求域中, ${requestScope.time } 这样去访问
+
+
