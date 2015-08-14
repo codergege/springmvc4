@@ -28,6 +28,27 @@ th,td{ padding:0; }
 </head>
 <body>
 
+
+<a href="springmvc4/testHelloView">test hello view</a>
+<p class="desc">test hello view</p>
+<br>
+<!-- 
+	1. 原始数据 1, zhaobo, 赵波, 123456, 19860529
+	2. 模拟回显 
+	3. 修改生日
+-->
+<form action="springmvc4/testModelAttribute" method="POST">
+	<input type="hidden" name="id" value="1"/>
+	<label class="fl">用户名:</label><input type="text" name="username" value="zhaobo"/><br>
+	<label class="fl">昵称:</label><input type="text" name="nickname" value="赵波"/><br>
+	<label class="fl">生日:</label><input type="text" name="birthday" value="19860529"/><br>
+	<input type="submit" value="修改"/><br>
+</form>
+<p class="desc">test ModelAttribute</p>
+<br>
+<a href="springmvc4/testMap">test Map</a>
+<p class="desc">test map</p>
+<br>
 <a href="springmvc4/testModelAndView">test ModelAndView</a>
 <p class="desc">test modelandview</p>
 <br>

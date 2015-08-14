@@ -14,6 +14,7 @@ public class User {
 	public Integer getId() {
 		return id;
 	}
+	
 	public void setId(Integer id) {
 		this.id = id;
 	}
@@ -51,5 +52,16 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", nickname=" + nickname + ", password=" + password + ", birthday=" + birthday + ", address=" + address + "]";
+	}
+	public User() {
+		super();
+	}
+	public User(Integer id, String username, String nickname, String password, String birthday) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.nickname = nickname;
+		this.password = password;
+		this.birthday = birthday;
 	}
 }
